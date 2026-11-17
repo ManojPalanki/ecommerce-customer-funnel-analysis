@@ -1,6 +1,6 @@
 # E-Commerce Customer Funnel & Revenue Analysis
 
-**SQL Server | Power BI | DAX | Power Query**
+**Excel | Power Query | SQL Server | Power BI | DAX**
 
 ## Table of Contents
 
@@ -27,9 +27,11 @@
 
 ## 1. Project Overview
 
-The E-Commerce Customer Funnel & Revenue Analysis project examines customer sessions, purchasing behavior, conversion performance, revenue, and marketing-channel effectiveness using SQL Server and Microsoft Power BI.
+The E-Commerce Customer Funnel & Revenue Analysis project examines customer sessions, purchasing behavior, conversion performance, revenue, and marketing-channel effectiveness using Microsoft Excel, SQL Server, and Microsoft Power BI.
 
 The project analyzes 25,000 e-commerce sessions to understand how users interact with the purchasing journey, how frequently sessions result in purchases, how often carts are abandoned, and how performance varies across customer types, devices, marketing channels, product categories, and months.
+
+Microsoft Excel with Power Query is used for initial data preparation, cleaning, transformation, and validation.
 
 SQL Server is used for data validation, business analysis, and KPI calculations. Power BI is used to prepare the analytical data, build a dimensional data model, create DAX measures, and develop an interactive dashboard.
 
@@ -41,9 +43,10 @@ The final objective is to translate numerical results into meaningful business i
 |---|---|
 | Project name | E-Commerce Customer Funnel & Revenue Analysis |
 | Dataset size | 25,000 sessions |
+| Data cleaning | Microsoft Excel Power Query |
 | Database technology | SQL Server |
 | Business intelligence tool | Microsoft Power BI |
-| Data preparation | Power Query |
+| Data modeling | Power BI |
 | Calculation language | DAX |
 | Dashboard pages | 3 |
 | Main focus | Conversion, revenue, customer behavior, and cart abandonment |
@@ -69,19 +72,28 @@ The business objective is to identify measurable performance gaps and recommend 
 
 ## 3. Project Objectives
 
-1. Validate the dataset before analysis.
-2. Calculate the main e-commerce performance KPIs.
-3. Analyze the customer conversion funnel.
-4. Measure cart abandonment and cart-to-purchase conversion.
-5. Compare new and returning customers.
-6. Evaluate performance across mobile, desktop, and tablet.
-7. Compare marketing channels using session volume, revenue, and conversion.
-8. Analyze product-category performance.
-9. Examine monthly revenue and conversion trends.
-10. Build an interactive Power BI dashboard.
-11. Develop evidence-based business recommendations.
+1. Prepare and clean the dataset using Microsoft Excel Power Query.
+2. Validate the dataset before analysis.
+3. Calculate the main e-commerce performance KPIs.
+4. Analyze the customer conversion funnel.
+5. Measure cart abandonment and cart-to-purchase conversion.
+6. Compare new and returning customers.
+7. Evaluate performance across mobile, desktop, and tablet.
+8. Compare marketing channels using session volume, revenue, and conversion.
+9. Analyze product-category performance.
+10. Examine monthly revenue and conversion trends.
+11. Build an interactive Power BI dashboard.
+12. Develop evidence-based business recommendations.
 
 ## 4. Tools and Technologies
+
+### Microsoft Excel – Power Query
+
+Microsoft Excel with Power Query is used for the initial data preparation and cleaning process.
+
+Important activities include importing the raw CSV dataset, standardizing data types, checking missing values and duplicates, preparing categorical fields, creating derived business columns, and validating data consistency.
+
+The cleaned dataset is exported for further analysis in SQL Server.
 
 ### SQL Server
 
@@ -92,10 +104,6 @@ Important SQL concepts used in the analysis include filtering, aggregation, cond
 ### Microsoft Power BI
 
 Power BI transforms analytical results into interactive reports that users can explore through charts, KPI cards, and slicers.
-
-### Power Query
-
-Power Query is the data preparation component inside Power BI. It supports importing data, changing data types, renaming columns, filtering records, and performing other transformations.
 
 ### DAX
 
@@ -121,13 +129,15 @@ The dataset was examined to understand its columns, record count, identifiers, d
 
 **Why this matters:** The analyst must understand what each row represents before choosing calculations.
 
-### Step 3: Validate data quality
+### Step 3: Prepare and clean data using Excel Power Query
 
-The workflow included checks for missing values, duplicate records, data types, identifiers, and business-rule consistency.
+The raw dataset was imported into Microsoft Excel Power Query for data preparation and cleaning.
 
-The recorded results included zero null values in the relevant check and zero duplicate records in the relevant check.
+The process included data-type standardization, duplicate and missing-value validation, categorical field inspection, derived business columns, and business-rule validation.
 
-**Why this matters:** Incorrect identifiers or inconsistent records can produce inaccurate totals and misleading conclusions.
+The cleaned analytical dataset was then exported for SQL Server.
+
+**Why this matters:** Proper data preparation helps maintain data quality and prevents incorrect calculations during analysis.
 
 ### Step 4: Perform SQL analysis
 
@@ -407,21 +417,21 @@ The examples in this section explain the SQL concepts used in analytical workflo
 
 ## 10. Power BI Data Preparation
 
-Power BI was used to import and prepare the analytical data.
+After data cleaning and preparation in Microsoft Excel using Power Query, the cleaned analytical dataset was exported and imported into Power BI.
 
-Power Query supports data preparation operations such as:
+The Power BI data preparation stage focused on:
 
+- Importing the cleaned dataset.
 - Checking column names and data types.
-- Converting date fields into date data types.
-- Converting revenue to an appropriate numeric type.
-- Removing unnecessary columns when appropriate.
-- Filtering or transforming data when justified by the requirements.
+- Verifying date and numeric fields.
+- Confirming the imported record count.
+- Preparing the dataset for data modeling.
 
 A transformation should not be performed merely because it is available. It should have a clear analytical purpose.
 
 For example, converting a text-formatted date into a date data type allows Power BI to use date-aware filtering and time-based analysis.
 
-The exact sequence of Power Query transformations should be documented from the actual Power Query steps used in the project.
+The primary data cleaning and transformation workflow was completed in Excel Power Query before loading the prepared dataset into SQL Server.
 
 ## 11. Power BI Data Model
 
@@ -757,23 +767,27 @@ Mobile represents the largest session segment, but its conversion rate is simila
 
 Start with this README to understand the business problem, workflow, KPIs, and findings.
 
-### Step 2: Review the SQL scripts
+### Step 2: Review the Excel Power Query preparation
+
+Review the original data preparation and cleaning workflow performed using Microsoft Excel Power Query before SQL Server analysis.
+
+### Step 3: Review the SQL scripts
 
 Open the files in `02_sql/` and examine the validation queries and business analysis.
 
 The actual scripts should be documented individually with their purpose, inputs, outputs, and line-by-line explanations.
 
-### Step 3: Open the Power BI dashboard
+### Step 4: Open the Power BI dashboard
 
 Open the `.pbix` file in `03_powerbi/` using Power BI Desktop.
 
 Explore the three report pages and test the slicers.
 
-### Step 4: Review the data model
+### Step 5: Review the data model
 
 Open Model view to inspect the relationships between the fact table and the supporting dimensions.
 
-### Step 5: Review the business recommendations
+### Step 6: Review the business recommendations
 
 Read the supporting documentation in `05_documentation/` to understand the findings and proposed next steps.
 
@@ -781,13 +795,13 @@ Read the supporting documentation in `05_documentation/` to understand the findi
 
 This project demonstrates an end-to-end analytical workflow:
 
-- Translating business questions into measurable KPIs.
+- Preparing and cleaning data using Microsoft Excel Power Query.
 - Validating data before drawing conclusions.
 - Using SQL to aggregate and analyze structured data.
 - Understanding the difference between session-level and customer-level metrics.
 - Building a dimensional model in Power BI.
 - Creating reusable DAX measures.
-- Designing interactive reports.
+- Designing interactive Power BI reports.
 - Reconciling results across analytical tools.
 - Distinguishing observed patterns from unproven causes.
 - Communicating findings through business insights and recommendations.
